@@ -1,0 +1,47 @@
+@use 'variaveis';
+
+.show {
+
+    padding: 2vw 5.6vw;
+
+    &__list {
+        margin-top: 40px;
+        display: none;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1%;
+
+        &--is-active {
+            display: grid;
+        }
+
+        &__item {
+            list-style: none;
+            
+            img {
+                max-width: 100%;
+                border-radius: 4px;
+            }
+        }
+    }
+
+    &__tabs {
+        display: flex;
+        justify-content: center;
+
+        &__button {
+            color: variaveis.$corTextosecundario;
+            font-size: 20px;
+            padding-bottom: 5px;
+            border: none;
+            background: none;
+            border-bottom: 5px solid transparent;
+            text-transform: uppercase;
+            margin: 0 1vh;
+            cursor: pointer;
+
+            &--is-active {
+                border-bottom: 5px solid variaveis.$corTextosecundario;
+            }
+        }
+    }
+}
