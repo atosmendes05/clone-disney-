@@ -2,6 +2,12 @@
 @use 'variaveis';
 @use 'show';
 @use 'plans';
+@use 'watch';
+@use 'watch-two';
+@use 'devices';
+@use 'faq';
+@use 'foot';
+@use 'header';
 
 @font-face {
     font-family: Avenir;
@@ -41,18 +47,31 @@ body {
 
 .text--big {
     @include text(18px);
+    @media (max-width: 768px) {
+        @include text(15px)
+    }
 }
 
 .text {
     @include text;
+    @media (max-width: 768px) {
+        @include text(14px)
+    }
 }
 
 .text--small {
     @include text(12px);
+    @media (max-width: 768px) {
+        @include text(11px)
+    }
 }
 
 .title--big {
     @include title(44px);
+
+    @media (max-width: 768px) {
+        @include title(26px)
+    }
 }
 
 .title {
@@ -61,6 +80,9 @@ body {
 
 .title--small {
     @include title(28px);
+    @media (max-width: 768px) {
+        @include title(22px)
+    }
 }
 
 .link-text {
@@ -75,11 +97,35 @@ body {
     height: 54px;
     font-size: 18px;
     color: variaveis.$corTextosecundario;
-    background-color: #6421ff;
+    background-color:  variaveis.$corFundoBotaoprimario;
     text-transform: uppercase;
     border-radius: 4px;
-    margin-top: 2vw;
-    margin-bottom: 8px;
-    border: none;
+    border: 1px solid  variaveis.$corFundoBotaoprimario;
     cursor: pointer;
+    letter-spacing: 1px;
+    text-decoration: none;
+    padding: 8px 14px ;
+
+    &:hover {
+        background-color: lighten(variaveis.$corFundoBotaoprimario,3%);
+    }
+
+    &--secondary {
+        background-color: variaveis.$corFundoBotaosegundario;
+        border-color: variaveis.$corFundoBotaosegundario;
+
+        &:hover {
+            background-color: lighten(variaveis.$corFundoBotaosegundario,3%);
+        }
+    }
+
+    &--dark {
+        background-color: rgba(variaveis.$corFundoBotaoterceiro,0.8);;
+        border-color: variaveis.$corTextosecundario;
+
+        &:hover {
+            background-color:  variaveis.$corTextosecundario;
+            color: variaveis.$corDefundo;
+        }
+    }
 }
